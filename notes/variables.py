@@ -1,0 +1,3 @@
+name = "Lupus"
+
+print(name)
