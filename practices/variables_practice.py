@@ -1,6 +1,6 @@
 # CW Variables Practice
 
-name = "Lupus"
+name = "Cannon"
 number = 9
 big_number = 543
 breakfast = "pancakes"
