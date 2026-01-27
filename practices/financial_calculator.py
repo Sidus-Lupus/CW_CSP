@@ -15,7 +15,7 @@ trasnport_percent = user_transport/user_income
 save_amount = user_income * 0.1
 user_spend = user_income-(user_rent + user_utilities + user_groceries + user_transport + (save_amount))
 print()
-if(user_income = 0):
+if(user_income == 0):
         print("Your rent is $", user_rent, "and that is", round(rent_percent*100), "% of your income.")
         print("Your utilities is $", user_utilities, "and that is", round(uitilites_percent*100), "% of your income.")
         print("Your groceries is $", user_groceries, "and that is", round(groceries_percent*100), "% of your income.")
