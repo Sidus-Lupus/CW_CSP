@@ -15,3 +15,7 @@ for name in names:
 
 for number in numbers: 
     print(f"{number} - 10 = {number-10}")
+
+#iteration = repetition
+for i in range(20):
+    print(f"My code has iterated {i} times")
