@@ -24,10 +24,13 @@ user_spend = user_income-(user_rent + user_utilities + user_groceries + user_tra
 
 print()
 
-print("Your rent is $", user_rent, "and that is", round(rent_percent*100), "% of your income.")
-print("Your utilities is $", user_utilities, "and that is", round(uitilites_percent*100), "% of your income.")
-print("Your groceries is $", user_groceries, "and that is", round(groceries_percent*100), "% of your income.")
-print("Your transportatoin is $", user_transport, "and that is", round(trasnport_percent*100), "% of your income.")
+def printOutput(type, expense, percent):
+    print(f"Your {type} is ${expense} and that is, {round(percent*100)}% of your income")
+
+printOutput("rent", user_rent, rent_percent)
+printOutput("utiliies", user_utilities, uitilites_percent)
+printOutput("groceries", user_groceries, groceries_percent)
+printOutput("transportation", user_transport, trasnport_percent)
 print("You should save", save_amount, "and that is 10 % of your income.")
 if(user_spend >=0):
     print("You have $", user_spend, "of spending money each month!")
