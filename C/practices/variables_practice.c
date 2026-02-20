@@ -1,5 +1,7 @@
 // CW Variables Practice
 
+#include <stdio.h>
+
 int main(){
     char name[50];
     int lucky_number;
@@ -33,7 +35,7 @@ int main(){
     printf("What is the current year:\n");
     scanf("%d", &current_year);
 
-    prinf("What is your first intial:\n");
+    printf("What is your first intial:\n");
     scanf("%c", &first_intial);
 
     printf("How old are you:\n");
@@ -41,4 +43,6 @@ int main(){
 
     printf("How many movies do you own:\n");
     scanf("%d", &movies_number);
+
+    return 0;
 }
