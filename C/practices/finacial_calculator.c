@@ -39,5 +39,6 @@ int main(){
     printf("You should save $%.2f each month, and that is 10 percent of your montly income. \n", round(income/10));
 
     printf("You have $%.2f remaining each month.", remainining_income);
+    
     return 0;
 }
