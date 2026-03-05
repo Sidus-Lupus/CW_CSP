@@ -9,21 +9,27 @@ float utilites;
 float groceries;
 float transportation;
 
+float callUserExpense(char* expense){
+    float user_expense = 0;
+    printf("What is your monthly %s: ", expense);
+    scanf("%f", &user_expense);
+    return user_expense;
+}
+
+void printUserPercents(){
+
+}
+
 int main(){
-    printf("What is your monthly income: ");
-    scanf("%f", &income);
+    income = callUserExpense("income");
 
-    printf("What is your monthly rent: ");
-    scanf("%f", &rent);
+    rent = callUserExpense("rent");
 
-    printf("What is your montly utilites: ");
-    scanf("%f", &utilites);
+    utilites = callUserExpense("utilites");
 
-    printf("What is your montly groceries: ");
-    scanf("%f", &groceries);
+    groceries = callUserExpense("groceries");
 
-    printf("What is your monthly transportation fees: ");
-    scanf("%f", &transportation);
+    transportation = callUserExpense("transportation");
 
     printf("\n");
     float remainining_income = income-(rent+utilites+groceries+transportation+(income/10));
