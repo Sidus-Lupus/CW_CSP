@@ -16,8 +16,8 @@ float callUserExpense(char* expense){
     return user_expense;
 }
 
-void printUserPercents(){
-
+void printUserPercents(char* type, float expense){
+    printf("Your monthly %s is $%.2f, and that is %.0f percent of your monthly income.\n", type, expense, (float)round((expense/income)*100));
 }
 
 int main(){
@@ -34,13 +34,13 @@ int main(){
     printf("\n");
     float remainining_income = income-(rent+utilites+groceries+transportation+(income/10));
 
-    printf("Your monthly rent is $%.2f, and that is %.0f percent of your monthly income. \n", rent, round((rent/income)*100));
+    printUserPercents("rent", rent);
 
-    printf("Your monthly utilites is $%.2f, and that is %.0f percent of your montly income. \n", utilites, round((utilites/income)*100));
+    printUserPercents("utilites", utilites);
 
-    printf("Your monthly groceries is $%.2f, and that is %.0f percent of your montly income. \n", groceries, round((groceries/income)*100));
+    printUserPercents("utilites", groceries);
 
-    printf("Your monthly trasnportation is $%.2f, and that is %.0f percent of your montly income. \n", transportation, round((transportation/income)*100));
+    printUserPercents("utilites", transportation);
 
     printf("You should save $%.2f each month, and that is 10 percent of your montly income. \n", round(income/10));
 
