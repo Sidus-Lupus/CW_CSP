@@ -3,13 +3,38 @@
     <head>
         <title>Notes on Advanced HTML</title>
         <meta charset="UTF-8"/>
+        <!--Embeded style sheets are good practice. They go inside the head tag.-->
+        <style>
+            *{
+                background-color: #030391;
+                color: rgb(255, 166, 0);
+            }
+            p{
+                background-color: bisque;
+                text-align: center;
+            }
+            #ordered{
+                color:rgba(100, 148, 237, 0.753);
+            }
+            .section-2{
+                font-family: 'Times New Roman', Times, serif;
+                border: 3px inset rgb(0, 255, 200);
+            }
+            h1{
+                font-size: 2em;
+            }
+            img{
+                width: 50%;
+            }
+        </style>
     </head>
     <body>
         <h1>Advanced HTML</h1>
-        <div style="background-color: blueviolet; height:100px; width:100px;">
+        <!-- inline style. Considered BAD syntax-->
+        <div>
             <p>This is in a div</p>
         </div>
-        <div id ="ordered"; style="font-family: 'Times New Roman', Times, serif;">
+        <div id ="ordered"; class="seciton-2">
         <p>This is the way we make an ordered (numbered) list</p>
         <ol>
             <li>Red Wolves</li>
