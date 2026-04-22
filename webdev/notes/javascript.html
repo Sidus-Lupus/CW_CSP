@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Notes</title>
+        <meta charset="UTF-8">
+        <style>
+            #wolf{
+                display: none;
+                width: 50%;
+            }
+        </style>
+        <script>
+            let count = 0
+            let image_count = 0
+            let imgs = ["https://www.nwf.org/-/media/NEW-WEBSITE/Shared-Folder/Wildlife/Mammals/mammal_gray-wolf_600x300.jpg", "https://www.nczoo.org/sites/default/files/2024-06/regional-redwolf-litter.jpg","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYC_vsoCOPRVFrIpm7n_i-7zCmK7ndaHQsM-KnSPDiLci90J8xneIfcc0zRdtLzEHQL7Wl8PkYw1U7P4rdqueGUN1Tl8N9BfkXLzCldw&s=10"]
+            function color_change(){
+                document.getElementById("shift").style.color = document.getElementById("selected-color").value
+            }
+            function add(){
+                count += 1
+                document.getElementById("number").innerHTML = count
+            }
+            function hover(id){
+                document.getElementById(id).style.backgroundColor = document.getElementById("selected-color").value
+                document.getElementById(id).style.color = "white"
+            }
+            function unhover(id){
+                document.getElementById(id).style.backgroundColor = "lightgray"
+                document.getElementById(id).style.color = "black"
+            }
+            function popup(){
+                alert("This is a PSA: your cat has left home")
+            }
+            function show(id){
+                if(document.getElementById(id).style.display == "block"){
+                    document.getElementById(id).style.display = "none"
+                } else{
+                    document.getElementById(id).style.display = "block"
+                }
+                 
+            }
+            function change(){
+                if(image_count >= imgs.length){
+                    img_count = 0 
+                } else {
+                    img_count += 1
+                }
+                document.getElementById("wolf").src = imgs[img_count]
+            }
+        </script>
+    </head>
+    <body>
+        <h1 onclick="popup()" id="shift">JavaScript Notes</h1>
+        <input type="color" id="selected-color"/>
+        <button onclick="color_change()" onmouseover="hover('one')" onmouseout="unhover('one')" id="one">Change Color</button>
+        <p id="number" onmouseover="show('wolf')">0</p>
+        <button onclick = "add()" onmouseover="hover('two')" onmouseout="unhover('two')" id="two">Increase</button>
+        <img onclick="change()" id="wolf" alt="graywolf" src="https://www.nwf.org/-/media/NEW-WEBSITE/Shared-Folder/Wildlife/Mammals/mammal_gray-wolf_600x300.jpg"/>
+
+    </body>
+</html>
