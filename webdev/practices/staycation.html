@@ -19,12 +19,47 @@
                 font-style: italic;
             }
 
-            #placeholder-image{
-                width: 25%;
-                margin: 0px;
+            .image{
+                width: 50%;
+                margin: 5px;
             }
-            
+
+            #button-wrapper{
+                min-height: 20px;
+            }
+
+            .sections{
+                display: grid;
+                grid-template: 1fr 2fr / 1fr 1fr;
+                padding: 10px;
+            }
+
+            #outdoors{
+                display: none;
+            }
+
         </style>
+        <script>
+            let count = 0
+            let image_count = 0
+            let images = ["https://ctfassets.ksldigital.com/0wjmk6wgfops/2DqDtsXdm80UrvLovNlDMP/082f2eaa8633e8ea61bd54c6ae25cc77/5f3ab44219_c6abad48-cfc1-4507-829b-279a35e28ca3.jpg?w=1280&h=800&fit=fill&f=center&q=80&fm=webp", "https://ctfassets.ksldigital.com/0wjmk6wgfops/7Fuyk5WTL7Mxw0yKOI6U5U/f1fe512614eec04f0a94a93624206c3c/MS-Powder-Skiing-2017-01.under.jpg?w=1280&h=800&fit=fill&f=center&q=80&fm=webp"]
+            function changeimage(id){
+                if(image_count >= images.length -1){
+                    image_count = 0 
+                } else {
+                    image_count += 1
+                }
+                document.getElementById(id).src = images[image_count]
+            }
+
+            function showmore(id){
+                if(document.getElementById(id).style.display == "block"){
+                    document.getElementById(id).style.display = "none"
+                } else{
+                    document.getElementById(id).style.display = "block"
+                }
+            }
+        </script>
     </head>
     <header> 
         
@@ -33,19 +68,30 @@
 
         <h1>Why <span class = "key-word">You</span> Should go to Park City</h1>
 
-        <p>A description of Park City</p>
-
+        <div class="sections">
+        
+        <div id="intro">
+            <p>In short, Park City is a city with some permament residents but dominated by tourism. It has a cold climate and is known for its art and recreational activites.</p>
+        </div>
+        <div id="list-of-reasons">
         <h3>Reasons to go to Park City</h3>
-        <ul>
-            <li>Skiing</li>
-            <li>Biking and Hiking trails</li>
-            <li>World-class Resorts</li>
-            <li>4</li>
+            <ul>
+                <li>Skiing</li>
+                <li>Biking and Hiking trails</li>
+                <li>World-class Resorts</li>
+                <li>High Quality Resturants</li>
         </ul>
-                <img id="placeholder-image" src="https://ctfassets.ksldigital.com/0wjmk6wgfops/2DqDtsXdm80UrvLovNlDMP/082f2eaa8633e8ea61bd54c6ae25cc77/5f3ab44219_c6abad48-cfc1-4507-829b-279a35e28ca3.jpg?w=1280&h=800&fit=fill&f=center&q=80&fm=webp" alt="Snowy Mountain-side"/>
-                <img id="placeholder-image" src="https://ctfassets.ksldigital.com/0wjmk6wgfops/7Fuyk5WTL7Mxw0yKOI6U5U/f1fe512614eec04f0a94a93624206c3c/MS-Powder-Skiing-2017-01.under.jpg?w=1280&h=800&fit=fill&f=center&q=80&fm=webp" alt="Skiier in Snow"/>
-                <img id="placeholder-image" src="https://ctfassets.ksldigital.com/0wjmk6wgfops/4hpiO1syQ5EQ5xqWUYjgbq/87f42af2a877b8635430917d547eec05/c3251e2024_103e2cff-dd63-42c1-8460-a0940003db23.jpg?w=1280&h=800&fit=fill&f=center&q=80&fm=webp" alt="Park City Bus"/>
-                <img id="placeholder-image" src="https://ctfassets.ksldigital.com/0wjmk6wgfops/3l9q62KWaSQjRxpLGcLIjD/b66361f3bb12e4f5757b58d6f2276c9c/5a4a9b1468_0b8a2ab2-ad40-47f1-ba2a-c952a6b070c2.jpg?w=1280&h=800&fit=fill&f=center&q=80&fm=webp" alt="Bikers Riding in Meadow"/>
-
+        </div>
+        
+        <img class="image" src="https://ctfassets.ksldigital.com/0wjmk6wgfops/4hpiO1syQ5EQ5xqWUYjgbq/87f42af2a877b8635430917d547eec05/c3251e2024_103e2cff-dd63-42c1-8460-a0940003db23.jpg?w=1280&h=800&fit=fill&f=center&q=80&fm=webp" alt="Park City Bus"/>
+         <img onmouseover="changeimage('snowy-mountain')" class="image" id="snowy-mountain" src="https://ctfassets.ksldigital.com/0wjmk6wgfops/2DqDtsXdm80UrvLovNlDMP/082f2eaa8633e8ea61bd54c6ae25cc77/5f3ab44219_c6abad48-cfc1-4507-829b-279a35e28ca3.jpg?w=1280&h=800&fit=fill&f=center&q=80&fm=webp" alt="Snowy Mountain-side"/>
+        <div id="button-wrapper">
+            <button id="show-more" onclick="showmore('outdoors')">More about Outdoor Recreation</button>
+        </div>
+        <div id="outdoors">
+            <img class="image" src="https://ctfassets.ksldigital.com/0wjmk6wgfops/3l9q62KWaSQjRxpLGcLIjD/b66361f3bb12e4f5757b58d6f2276c9c/5a4a9b1468_0b8a2ab2-ad40-47f1-ba2a-c952a6b070c2.jpg?w=1280&h=800&fit=fill&f=center&q=80&fm=webp" alt="Bikers Riding in Meadow"/>
+        </div>
+            
+        </div>
     </body>
 </html>
