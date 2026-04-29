@@ -12,6 +12,7 @@
                 background-color: #4baaad;
                 font-family: "Elms Sans", sans-serif;
                 font-size: large;
+                padding: 2px;
                 
             }
 
@@ -30,12 +31,20 @@
 
             .sections{
                 display: grid;
-                grid-template: 1fr 2fr / 1fr 1fr;
-                padding: 10px;
+                grid-template: 1fr 2fr/ 1fr 1fr;
+                margin: 10px;
             }
 
             #outdoors{
                 display: none;
+            }
+
+            #paragraph-wrapper-outdoors{
+                width: 400px;
+            }
+
+            #intro{
+                width: 450px;
             }
 
         </style>
@@ -71,7 +80,7 @@
         <div class="sections">
         
         <div id="intro">
-            <p>In short, Park City is a city with some permament residents but dominated by tourism. It has a cold climate and is known for its art and recreational activites.</p>
+            <p>In short, Park City is a city with some permament residents but dominated by tourism. It has a cold climate and is known for its art and recreational activites. Most people travel to Park City over other cities in Utah for many of these reasons.</p>
         </div>
         <div id="list-of-reasons">
         <h3>Reasons to go to Park City</h3>
@@ -89,6 +98,9 @@
             <button id="show-more" onclick="showmore('outdoors')">More about Outdoor Recreation</button>
         </div>
         <div id="outdoors">
+            <div id="paragraph-wrapper-outdoors">
+            <p>As well as skiing, Park city is also well known for its hiking and biking trails. In fact, Park City has a total of 1,289 biking trails.</p>
+            </div>
             <img class="image" src="https://ctfassets.ksldigital.com/0wjmk6wgfops/3l9q62KWaSQjRxpLGcLIjD/b66361f3bb12e4f5757b58d6f2276c9c/5a4a9b1468_0b8a2ab2-ad40-47f1-ba2a-c952a6b070c2.jpg?w=1280&h=800&fit=fill&f=center&q=80&fm=webp" alt="Bikers Riding in Meadow"/>
         </div>
             
